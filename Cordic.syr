@@ -1,0 +1,636 @@
+Release 13.2 - xst O.61xd (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Reading design: Cordic.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Cordic.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Cordic"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : Cordic
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "Cordic.v" in library work
+Module <Cordic> compiled
+No errors in compilation
+Analysis of file <"Cordic.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Cordic> in library <work> with parameters.
+	EXTRA_BITS = "00000000000000000000000000000110"
+	IN_WIDTH = "00000000000000000000000000010000"
+	STG = "00000000000000000000000000010110"
+	WI = "00000000000000000000000000010000"
+	WXY = "00000000000000000000000000010110"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Cordic>.
+	EXTRA_BITS = 32'sb00000000000000000000000000000110
+	IN_WIDTH = 32'sb00000000000000000000000000010000
+	STG = 32'sb00000000000000000000000000010110
+	WI = 32'sb00000000000000000000000000010000
+	WXY = 32'sb00000000000000000000000000010110
+Module <Cordic> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Cordic>.
+    Related source file is "Cordic.v".
+WARNING:Xst:646 - Signal <atan_table<21:31>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <Z<21>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 16-bit adder for signal <nxin>.
+    Found 16-bit adder for signal <nyin>.
+    Found 32-bit up accumulator for signal <phase_acc>.
+    Found 484-bit register for signal <X>.
+    Found 22-bit 4-to-1 multiplexer for signal <X_0$mux0000> created at line 91.
+    Found 22-bit addsub for signal <X_1$mux0000>.
+    Found 22-bit addsub for signal <X_10$mux0000>.
+    Found 22-bit addsub for signal <X_11$mux0000>.
+    Found 22-bit addsub for signal <X_12$mux0000>.
+    Found 22-bit addsub for signal <X_13$mux0000>.
+    Found 22-bit addsub for signal <X_14$mux0000>.
+    Found 22-bit addsub for signal <X_15$mux0000>.
+    Found 22-bit addsub for signal <X_16$mux0000>.
+    Found 22-bit addsub for signal <X_17$mux0000>.
+    Found 22-bit addsub for signal <X_18$mux0000>.
+    Found 22-bit addsub for signal <X_19$mux0000>.
+    Found 22-bit addsub for signal <X_2$mux0000>.
+    Found 22-bit addsub for signal <X_20$mux0000>.
+    Found 22-bit addsub for signal <X_21$mux0000>.
+    Found 22-bit addsub for signal <X_3$mux0000>.
+    Found 22-bit addsub for signal <X_4$mux0000>.
+    Found 22-bit addsub for signal <X_5$mux0000>.
+    Found 22-bit addsub for signal <X_6$mux0000>.
+    Found 22-bit addsub for signal <X_7$mux0000>.
+    Found 22-bit addsub for signal <X_8$mux0000>.
+    Found 22-bit addsub for signal <X_9$mux0000>.
+    Found 484-bit register for signal <Y>.
+    Found 22-bit 4-to-1 multiplexer for signal <Y_0$mux0000> created at line 91.
+    Found 22-bit addsub for signal <Y_1$mux0000>.
+    Found 22-bit addsub for signal <Y_10$mux0000>.
+    Found 22-bit addsub for signal <Y_11$mux0000>.
+    Found 22-bit addsub for signal <Y_12$mux0000>.
+    Found 22-bit addsub for signal <Y_13$mux0000>.
+    Found 22-bit addsub for signal <Y_14$mux0000>.
+    Found 22-bit addsub for signal <Y_15$mux0000>.
+    Found 22-bit addsub for signal <Y_16$mux0000>.
+    Found 22-bit addsub for signal <Y_17$mux0000>.
+    Found 22-bit addsub for signal <Y_18$mux0000>.
+    Found 22-bit addsub for signal <Y_19$mux0000>.
+    Found 22-bit addsub for signal <Y_2$mux0000>.
+    Found 22-bit addsub for signal <Y_20$mux0000>.
+    Found 22-bit addsub for signal <Y_21$mux0000>.
+    Found 22-bit addsub for signal <Y_3$mux0000>.
+    Found 22-bit addsub for signal <Y_4$mux0000>.
+    Found 22-bit addsub for signal <Y_5$mux0000>.
+    Found 22-bit addsub for signal <Y_6$mux0000>.
+    Found 22-bit addsub for signal <Y_7$mux0000>.
+    Found 22-bit addsub for signal <Y_8$mux0000>.
+    Found 22-bit addsub for signal <Y_9$mux0000>.
+    Found 672-bit register for signal <Z<0:20>>.
+    Found 32-bit 4-to-1 multiplexer for signal <Z_0$mux0000> created at line 91.
+    Found 32-bit adder for signal <Z_1$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_1$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_10$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_10$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_11$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_11$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_12$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_12$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_13$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_13$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_14$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_14$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_15$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_15$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_16$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_16$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_17$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_17$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_18$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_18$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_19$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_19$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_2$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_2$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_20$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_20$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_3$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_3$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_4$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_4$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_5$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_5$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_6$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_6$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_7$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_7$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_8$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_8$sub0000> created at line 134.
+    Found 32-bit adder for signal <Z_9$addsub0000> created at line 134.
+    Found 33-bit subtractor for signal <Z_9$sub0000> created at line 134.
+INFO:Xst:738 - HDL ADVISOR - 484 flip-flops were inferred for signal <X>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:738 - HDL ADVISOR - 484 flip-flops were inferred for signal <Y>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:738 - HDL ADVISOR - 672 flip-flops were inferred for signal <Z>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   1 Accumulator(s).
+	inferred 1640 D-type flip-flop(s).
+	inferred  84 Adder/Subtractor(s).
+	inferred  76 Multiplexer(s).
+Unit <Cordic> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 84
+ 16-bit adder                                          : 2
+ 22-bit addsub                                         : 42
+ 32-bit adder                                          : 20
+ 33-bit subtractor                                     : 20
+# Accumulators                                         : 1
+ 32-bit up accumulator                                 : 1
+# Registers                                            : 65
+ 22-bit register                                       : 44
+ 32-bit register                                       : 21
+# Multiplexers                                         : 3
+ 22-bit 4-to-1 multiplexer                             : 2
+ 32-bit 4-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <Z_20_0> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_1> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_2> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_3> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_4> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_5> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_6> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_7> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_8> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_9> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_10> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_11> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_12> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_13> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_14> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_15> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_16> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_17> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_18> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_19> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_20> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_21> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_22> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_23> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_24> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_25> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_26> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_27> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_28> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_29> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_30> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_0> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_1> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_2> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_3> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_4> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_5> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_6> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_7> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_8> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_9> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_10> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_11> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_12> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_13> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_14> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_15> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_16> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_17> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_18> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_19> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_20> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_21> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_22> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_23> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_24> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_25> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_26> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_27> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_28> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_29> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_20_30> of sequential type is unconnected in block <Cordic>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 84
+ 16-bit adder                                          : 2
+ 22-bit addsub                                         : 42
+ 32-bit adder                                          : 20
+ 32-bit subtractor                                     : 20
+# Accumulators                                         : 1
+ 32-bit up accumulator                                 : 1
+# Registers                                            : 1609
+ Flip-Flops                                            : 1609
+# Multiplexers                                         : 3
+ 22-bit 4-to-1 multiplexer                             : 2
+ 32-bit 4-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <X_0_0> (without init value) has a constant value of 0 in block <Cordic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <X_0_1> (without init value) has a constant value of 0 in block <Cordic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <X_0_2> (without init value) has a constant value of 0 in block <Cordic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <X_0_3> (without init value) has a constant value of 0 in block <Cordic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <X_0_4> (without init value) has a constant value of 0 in block <Cordic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Y_0_0> (without init value) has a constant value of 0 in block <Cordic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Y_0_1> (without init value) has a constant value of 0 in block <Cordic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Y_0_2> (without init value) has a constant value of 0 in block <Cordic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Y_0_3> (without init value) has a constant value of 0 in block <Cordic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Y_0_4> (without init value) has a constant value of 0 in block <Cordic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <Z_18_0> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_18_1> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_18_2> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_19_0> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_19_1> of sequential type is unconnected in block <Cordic>.
+WARNING:Xst:2677 - Node <Z_19_2> of sequential type is unconnected in block <Cordic>.
+INFO:Xst:2261 - The FF/Latch <Z_0_30> in Unit <Cordic> is equivalent to the following FF/Latch, which will be removed : <Z_0_31> 
+INFO:Xst:2261 - The FF/Latch <X_0_20> in Unit <Cordic> is equivalent to the following FF/Latch, which will be removed : <X_0_21> 
+INFO:Xst:2261 - The FF/Latch <Y_0_20> in Unit <Cordic> is equivalent to the following FF/Latch, which will be removed : <Y_0_21> 
+
+Optimizing unit <Cordic> ...
+INFO:Xst:2261 - The FF/Latch <Z_1_29> in Unit <Cordic> is equivalent to the following FF/Latch, which will be removed : <Z_1_30> 
+INFO:Xst:2261 - The FF/Latch <Z_1_29> in Unit <Cordic> is equivalent to the following FF/Latch, which will be removed : <Z_1_31> 
+INFO:Xst:2261 - The FF/Latch <Z_1_29> in Unit <Cordic> is equivalent to the following FF/Latch, which will be removed : <Z_1_31> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+PACKER Warning: Lut X_1_mux00012 is driving XOR and other loads hence can not be packed with the XOR/Carry. This would result in an extra LUT for a feedthrough.
+Found area constraint ratio of 100 (+ 5) on block Cordic, actual ratio is 32.
+
+Final Macro Processing ...
+
+Processing Unit <Cordic> :
+	Found 2-bit shift register for signal <Z_2_0>.
+	Found 2-bit shift register for signal <Z_12_1>.
+	Found 3-bit shift register for signal <Z_13_0>.
+Unit <Cordic> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1612
+ Flip-Flops                                            : 1612
+# Shift Registers                                      : 3
+ 2-bit shift register                                  : 2
+ 3-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Cordic.ngr
+Top Level Output File Name         : Cordic
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 109
+
+Cell Usage :
+# BELS                             : 7059
+#      GND                         : 1
+#      INV                         : 645
+#      LUT1                        : 596
+#      LUT2                        : 32
+#      LUT3                        : 1536
+#      LUT4                        : 30
+#      MUXCY                       : 2083
+#      MUXF5                       : 32
+#      VCC                         : 1
+#      XORCY                       : 2103
+# FlipFlops/Latches                : 1615
+#      FD                          : 1614
+#      FDR                         : 1
+# Shift Registers                  : 3
+#      SRL16                       : 3
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 108
+#      IBUF                        : 64
+#      OBUF                        : 44
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                     1483  out of   4656    31%  
+ Number of Slice Flip Flops:           1615  out of   9312    17%  
+ Number of 4 input LUTs:               2842  out of   9312    30%  
+    Number used as logic:              2839
+    Number used as Shift registers:       3
+ Number of IOs:                         109
+ Number of bonded IOBs:                 109  out of    232    46%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1618  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 6.466ns (Maximum Frequency: 154.655MHz)
+   Minimum input arrival time before clock: 6.610ns
+   Maximum output required time after clock: 4.283ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.466ns (frequency: 154.655MHz)
+  Total number of paths / destination ports: 61690 / 1618
+-------------------------------------------------------------------------
+Delay:               6.466ns (Levels of Logic = 34)
+  Source:            Z_2_0 (FF)
+  Destination:       Z_3_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: Z_2_0 to Z_3_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.591   0.622  Z_2_0 (Z_2_0)
+     LUT1:I0->O            1   0.704   0.000  Msub_Z_3_sub0000_Madd_cy<0>_rt (Msub_Z_3_sub0000_Madd_cy<0>_rt)
+     MUXCY:S->O            1   0.464   0.000  Msub_Z_3_sub0000_Madd_cy<0> (Msub_Z_3_sub0000_Madd_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<1> (Msub_Z_3_sub0000_Madd_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<2> (Msub_Z_3_sub0000_Madd_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<3> (Msub_Z_3_sub0000_Madd_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<4> (Msub_Z_3_sub0000_Madd_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<5> (Msub_Z_3_sub0000_Madd_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<6> (Msub_Z_3_sub0000_Madd_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<7> (Msub_Z_3_sub0000_Madd_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<8> (Msub_Z_3_sub0000_Madd_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<9> (Msub_Z_3_sub0000_Madd_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<10> (Msub_Z_3_sub0000_Madd_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<11> (Msub_Z_3_sub0000_Madd_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<12> (Msub_Z_3_sub0000_Madd_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<13> (Msub_Z_3_sub0000_Madd_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<14> (Msub_Z_3_sub0000_Madd_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<15> (Msub_Z_3_sub0000_Madd_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<16> (Msub_Z_3_sub0000_Madd_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<17> (Msub_Z_3_sub0000_Madd_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<18> (Msub_Z_3_sub0000_Madd_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<19> (Msub_Z_3_sub0000_Madd_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<20> (Msub_Z_3_sub0000_Madd_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<21> (Msub_Z_3_sub0000_Madd_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<22> (Msub_Z_3_sub0000_Madd_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<23> (Msub_Z_3_sub0000_Madd_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<24> (Msub_Z_3_sub0000_Madd_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<25> (Msub_Z_3_sub0000_Madd_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<26> (Msub_Z_3_sub0000_Madd_cy<26>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<27> (Msub_Z_3_sub0000_Madd_cy<27>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<28> (Msub_Z_3_sub0000_Madd_cy<28>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<29> (Msub_Z_3_sub0000_Madd_cy<29>)
+     MUXCY:CI->O           0   0.059   0.000  Msub_Z_3_sub0000_Madd_cy<30> (Msub_Z_3_sub0000_Madd_cy<30>)
+     XORCY:CI->O           1   0.804   0.499  Msub_Z_3_sub0000_Madd_xor<31> (Z_3_sub0000<31>)
+     LUT3:I1->O            1   0.704   0.000  Z_3_mux0000<31>1 (Z_3_mux0000<31>)
+     FD:D                      0.308          Z_3_31
+    ----------------------------------------
+    Total                      6.466ns (5.345ns logic, 1.121ns route)
+                                       (82.7% logic, 17.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 926 / 94
+-------------------------------------------------------------------------
+Offset:              6.610ns (Levels of Logic = 20)
+  Source:            yin<0> (PAD)
+  Destination:       X_0_20 (FF)
+  Destination Clock: clk rising
+
+  Data Path: yin<0> to X_0_20
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.762  yin_0_IBUF (yin_0_IBUF)
+     LUT1:I0->O            1   0.704   0.000  Madd_nyin_cy<0>_rt (Madd_nyin_cy<0>_rt)
+     MUXCY:S->O            1   0.464   0.000  Madd_nyin_cy<0> (Madd_nyin_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<1> (Madd_nyin_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<2> (Madd_nyin_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<3> (Madd_nyin_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<4> (Madd_nyin_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<5> (Madd_nyin_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<6> (Madd_nyin_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<7> (Madd_nyin_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<8> (Madd_nyin_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<9> (Madd_nyin_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<10> (Madd_nyin_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<11> (Madd_nyin_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<12> (Madd_nyin_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_nyin_cy<13> (Madd_nyin_cy<13>)
+     MUXCY:CI->O           0   0.059   0.000  Madd_nyin_cy<14> (Madd_nyin_cy<14>)
+     XORCY:CI->O           1   0.804   0.499  Madd_nyin_xor<15> (nyin<15>)
+     LUT3:I1->O            1   0.704   0.000  X_0_mux0000<20>_G (N160)
+     MUXF5:I1->O           1   0.321   0.000  X_0_mux0000<20> (X_0_mux0000<20>)
+     FD:D                      0.308          X_0_20
+    ----------------------------------------
+    Total                      6.610ns (5.349ns logic, 1.261ns route)
+                                       (80.9% logic, 19.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 44 / 44
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            Y_21_21 (FF)
+  Destination:       yout<21> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: Y_21_21 to yout<21>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.591   0.420  Y_21_21 (Y_21_21)
+     OBUF:I->O                 3.272          yout_21_OBUF (yout<21>)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 20.00 secs
+ 
+--> 
+
+Total memory usage is 223752 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   80 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
+
